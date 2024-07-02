@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container } from '../estilos/EstilosGenerales';
-import { Link, Outlet } from 'react-router-dom'; // Importa Link desde react-router-dom
+import { Container, Titulo } from '../estilos/EstilosGenerales';
+import { Link} from 'react-router-dom'; 
 
 
 export const Administrador = () => {
   return (
     <Container>
-      <h1>Administrador</h1><br />
+      <Titulo>Administrador</Titulo><br />
 
       <StyledTable>
         <tbody>
@@ -42,13 +42,12 @@ const StyledTable = styled.table`
   max-width: 90%;
   margin: 0 auto;
   padding: 20px;
-  background-color: #232225;
+  background-color:rgba(54, 54, 52, 0.8);
   border: 1px solid lightslategray;
   border-radius: 5px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 
   tbody {
-    /* Estilos adicionales para el cuerpo de la tabla si es necesario */
   }
 
   td.contenedor-centrado {
@@ -61,8 +60,8 @@ const LinkButton = styled(Link)`
   display: block;
   padding: 15px 30px; /* Ajuste el padding según sea necesario */
   margin: 10px; /* Ajuste el margin según sea necesario */
-  background-color: #fdab13;
-  color: #1d1a39;
+  background-color: #1B2631;
+  color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -71,8 +70,8 @@ const LinkButton = styled(Link)`
   font-weight: 800;
 
   &:hover {
-    background-color: #1d1a39;
-    color: #fdab13;
+    background-color: white;
+    color:black;
   }
 
   @media (max-width: 768px) {

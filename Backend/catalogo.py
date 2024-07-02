@@ -59,3 +59,9 @@ class Catalogo:
         self.cursor.execute(f"DELETE FROM productos WHERE codigo = {codigo}")
         self.conn.commit()
         return self.cursor.rowcount > 0
+    
+    def buscar_por_nombre(self,nombre):
+        sql="SELECT * FROM productos WHERE descripcion LIKE %s"
+        valor = (f"%{nombre}%",)
+        self.cursor.execute(sql, valor)
+        return self.cursor.fetchall()

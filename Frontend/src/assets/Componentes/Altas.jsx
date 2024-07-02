@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { Container } from '../estilos/EstilosGenerales';
+import { Container, Titulo,BotonContenedor,LinkBoton,SubmitBoton } from '../estilos/EstilosGenerales';
 
 export const Altas = () => {
-  const URL = "http://127.0.0.1:5000/";
+  // const URL = "http://127.0.0.1:5000/";
+  const URL = "https://Roli325.pythonanywhere.com/";
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,7 +36,8 @@ export const Altas = () => {
   };
 
   return (
-    <StyledContainer>
+    <Container>
+      <Titulo>Cargar Productos</Titulo>
       <FormWrapper>
         <form id="formulario" onSubmit={handleSubmit} encType="multipart/form-data">
           <Label htmlFor="descripcion">Descripción:</Label>
@@ -53,32 +55,30 @@ export const Altas = () => {
           <Label htmlFor="proveedorProducto">Proveedor:</Label>
           <Input type="text" id="proveedorProducto" name="proveedor" />
 
-          <ButtonWrapper>
-            <SubmitButton type="submit">Agregar Producto</SubmitButton>
-            <LinkButton to="/admin">Administrador</LinkButton>
-          </ButtonWrapper>
+          <BotonContenedor>
+            <SubmitBoton type="submit">Agregar Producto</SubmitBoton>
+            <LinkBoton to="/admin">ADMINISTRADOR</LinkBoton>
+          </BotonContenedor>
         </form>
       </FormWrapper>
-    </StyledContainer>
+    </Container>
   );
 };
 
-const StyledContainer = styled(Container)`
-  padding: 20px;
-`;
 
 const FormWrapper = styled.div`
   max-width: 600px;
   margin: 0 auto;
-  background-color: #f2f2f2;
+  background-color: rgba(54, 54, 52, 0.8);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 `;
 
 const Label = styled.label`
   display: block;
   margin-bottom: 8px;
+  color: white;
 `;
 
 const Input = styled.input`
@@ -89,42 +89,5 @@ const Input = styled.input`
   border-radius: 5px;
 `;
 
-const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: space-between; /* Espacio uniforme entre los botones */
-`;
 
-const SubmitButton = styled.button`
-  flex: 1; /* Ocupa el espacio disponible */
-  padding: 12px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  
-  &:hover {
-    background-color: #0056b3;
-  }
-`;
 
-const LinkButton = styled(Link)`
-  flex: 1; /* Ocupa el espacio disponible */
-  padding: 12px;
-  background-color: #6c757d;
-  color: #fff;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-
-  &:hover {
-    background-color: #5a6268;
-  }
-`;

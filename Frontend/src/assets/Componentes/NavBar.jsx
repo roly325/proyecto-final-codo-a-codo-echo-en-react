@@ -42,7 +42,7 @@ export const NavBar = () => {
 
 const NavContainer = styled.nav`
   padding: 0.4rem;
-  background-color: #263238;
+  background-color:  #1B2631;
 
   display: flex;
   align-items: center;
@@ -79,7 +79,7 @@ const NavContainer = styled.nav`
     z-index: 2;
 
     a {
-      color: #90a4ae;
+      color:white;
       font-size: 2rem;
       display: block;
     }

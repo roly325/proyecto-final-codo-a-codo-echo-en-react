@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
-import { Container } from './../estilos/EstilosGenerales';
+import { Container, SubmitBoton, Titulo, LinkBoton, BotonContenedor } from './../estilos/EstilosGenerales';
 import styled from 'styled-components';
-const Title = styled.h1`
-  text-align: center;
-  margin: 1.5rem 0;
-  color: #000;
-`;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 2rem 0;
-  background: #dcdcdc;
+  background: rgba(54, 54, 52, 0.8);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -21,7 +16,7 @@ const Form = styled.form`
 const Label = styled.label`
   margin-bottom: 0.25rem;
   font-weight: bold;
-  color: #444;
+  color: white;
 `;
 
 const Input = styled.input`
@@ -33,48 +28,13 @@ const Input = styled.input`
   width: 85%;
   max-width: 300px;
 `;
-
-const Button = styled.button`
-  background-color: #17a2b8;
-  color: white;
-  padding: 0.75rem;
-  margin-top: 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  
-  &:hover {
-    background-color: #138496;
-  }
-`;
-
-const CancelButton = styled.a`
-  display: inline-block;
-  background-color: #ffc107;
-  color: black;
-  padding: 0.75rem;
-  margin-top: 1.5rem;
-  margin-left: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  
-  &:hover {
-    background-color: #e0a800;
-  }
-`;
-
 const ProductData = styled.div`
-  text-align: left;
-  margin: 2rem auto;
-  width: 80%;
+  text-align: center;
+  margin:auto;
+  width: 100%;
   max-width: 500px;
-  background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+;
+
 `;
 
 const Image = styled.img`
@@ -86,7 +46,9 @@ const Image = styled.img`
 
 
 export const ModificarProducto = () => {
-  const URL = "http://127.0.0.1:5000/";
+  const URL = "https://Roli325.pythonanywhere.com/";
+  // const URL = "http://127.0.0.1:5000/";
+
 
   // Variables de estado para controlar la visibilidad y los datos del formulario
   const [codigo, setCodigo] = useState('');
@@ -166,7 +128,7 @@ export const ModificarProducto = () => {
 
   return (
     <Container>
-      <Title>Modificar Productos del Inventario</Title><br />
+      <Titulo>Modificar Productos</Titulo><br />
 
       <div id="app">
         <Form id="form-obtener-producto" onSubmit={obtenerProducto}>
@@ -178,13 +140,17 @@ export const ModificarProducto = () => {
             onChange={(e) => setCodigo(e.target.value)}
             required
           /><br />
-          <Button type="submit">Modificar Producto</Button>
-          <CancelButton href="index.html">Menu principal</CancelButton>
+
+          <BotonContenedor>
+            <SubmitBoton type="submit">MODIFICAR PRODUCTO</SubmitBoton>
+            <LinkBoton to="/admin">ADMINISTRADOR</LinkBoton>
+          </BotonContenedor>
         </Form>
 
         {mostrarDatosProducto && (
+
           <ProductData id="datos-producto">
-            <h2>Datos del Producto</h2>
+            <Titulo>Datos del Producto</Titulo>
             <Form id="form-guardar-cambios" onSubmit={guardarCambios}>
               <Label htmlFor="descripcionModificar">Descripción:</Label>
               <Input
@@ -216,7 +182,9 @@ export const ModificarProducto = () => {
 
               <Image
                 id="imagen-actual"
-                src={imagenUrl && !imagenSeleccionada ? `http://127.0.0.1:5000/static/imagenes/${imagenUrl}` : ''}
+                // src={imagenUrl && !imagenSeleccionada ? `http://127.0.0.1:5000/static/imagenes/${imagenUrl}` : ''}
+                src={imagenUrl && !imagenSeleccionada ? `https://www.pythonanywhere.com/user/Roli325/files/home/Roli325/mysite/static/imagenes/${imagenUrl}` : ''}
+
                 style={{ display: imagenUrl && !imagenSeleccionada ? 'block' : 'none' }}
                 alt="Imagen actual del producto"
               />
@@ -239,9 +207,12 @@ export const ModificarProducto = () => {
                 onChange={(e) => setProveedor(e.target.value)}
                 required
               /><br />
+              <BotonContenedor>
 
-              <Button type="submit">Guardar Cambios</Button>
-              <CancelButton href="modificaciones.html">Cancelar</CancelButton>
+                <SubmitBoton type="submit">GUARDAR CAMBIOS</SubmitBoton>
+                <LinkBoton to="/admin">CANCELAR</LinkBoton>
+
+              </BotonContenedor>
             </Form>
           </ProductData>
         )}
