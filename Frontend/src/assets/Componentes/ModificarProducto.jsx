@@ -143,7 +143,7 @@ export const ModificarProducto = () => {
 
           <BotonContenedor>
             <SubmitBoton type="submit">MODIFICAR PRODUCTO</SubmitBoton>
-            <LinkBoton to="/admin">ADMINISTRADOR</LinkBoton>
+            <LinkBoton to="/">ADMINISTRADOR</LinkBoton>
           </BotonContenedor>
         </Form>
 
@@ -210,7 +210,7 @@ export const ModificarProducto = () => {
               <BotonContenedor>
 
                 <SubmitBoton type="submit">GUARDAR CAMBIOS</SubmitBoton>
-                <LinkBoton to="/admin">CANCELAR</LinkBoton>
+                <LinkBoton to="/">CANCELAR</LinkBoton>
 
               </BotonContenedor>
             </Form>

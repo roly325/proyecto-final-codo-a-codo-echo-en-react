@@ -61,7 +61,7 @@ export const ListadoProductos = () => {
                     productos.map(producto => (
                         <ProductoCard key={producto.codigo}>
                             <ProductoImagen 
-                                src={`https://www.pythonanywhere.com/user/Roli325/files/home/Roli325/mysite/static/imagenes/${producto.imagen_url}`} 
+                                src={`${URL}static/imagenes/${producto.imagen_url}`} 
                                 alt="Imagen del producto" 
                             />
                             <ProductoDetalle>
@@ -77,7 +77,7 @@ export const ListadoProductos = () => {
             </ProductosContainer><br />
 
             <BotonContenedor>
-                <LinkBoton to="/admin">Administrador</LinkBoton>
+                <LinkBoton to="/">Administrador</LinkBoton>
             </BotonContenedor>
         </Container>
     );

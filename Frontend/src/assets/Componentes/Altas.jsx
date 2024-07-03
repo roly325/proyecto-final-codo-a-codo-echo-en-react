@@ -57,7 +57,7 @@ export const Altas = () => {
 
           <BotonContenedor>
             <SubmitBoton type="submit">Agregar Producto</SubmitBoton>
-            <LinkBoton to="/admin">ADMINISTRADOR</LinkBoton>
+            <LinkBoton to="/">ADMINISTRADOR</LinkBoton>
           </BotonContenedor>
         </form>
       </FormWrapper>

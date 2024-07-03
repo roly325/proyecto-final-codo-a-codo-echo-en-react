@@ -24,8 +24,8 @@ export const NavBar = () => {
       <img src={logonav} alt="As" className="logo" />
       
       <div className={`Links ${clicked ? 'active' : ''}`}>
-        <Link onClick={cerrarMenu} to="/">prueba</Link>  
-        <Link onClick={cerrarMenu} to="/admin">Administrador</Link>  
+       
+        <Link onClick={cerrarMenu} to="/">Administrador</Link>  
       </div>
     
       <div className='burguer'>

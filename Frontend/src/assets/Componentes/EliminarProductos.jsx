@@ -95,7 +95,7 @@ export const EliminarProductos = () => {
         </tbody>
       </ProductTable>
       <BotonContenedor>
-        <LinkBoton to="/admin">ADMINISTRADOR</LinkBoton>
+        <LinkBoton to="/">ADMINISTRADOR</LinkBoton>
       </BotonContenedor>
     </Container>
   );

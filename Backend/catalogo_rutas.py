@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify,send_from_directory
 from werkzeug.utils import secure_filename
 import os
 import time
@@ -110,3 +110,7 @@ def buscar_productos():
             return jsonify({"mensaje": "No se encontraron productos con ese nombre."}), 404
     else:
         return jsonify({"mensaje": "Nombre de producto no proporcionado"}), 400
+
+@productos_bp.route("/static/imagenes/<path:filename>")
+def static_files(filename):
+    return send_from_directory(RUTA_DESTINO, filename)

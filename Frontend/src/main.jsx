@@ -17,9 +17,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
    <BrowserRouter>
    <NavBar/>
    <Routes>
-        <Route path="/" element={<PruebaAnidadas/>} />
-        
-        <Route path="admin" element={<Administrador />}/>
+      
+      
+        <Route path="/" element={<Administrador />}/>
         
         <Route path="altas" element={<Altas />}/>
 
