@@ -101,9 +101,13 @@ const ProductoCard = styled.div`
 
 const ProductoImagen = styled.img`
     width: 100%;
+    height: auto;
     max-height: 200px;
-    object-fit: cover;
+    object-fit: contain;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 `;
+
+
 
 const ProductoDetalle = styled.div`
     margin-top: 1rem;
